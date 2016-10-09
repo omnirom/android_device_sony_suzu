@@ -18,6 +18,10 @@ TARGET_BOOTANIMATION_SIZE := 1080x608
 # Inherit device parts
 $(call inherit-product, device/sony/suzu/aosp_f5121.mk)
 
+# Snapdragon Camera
+PRODUCT_PACKAGES += \
+    SnapdragonCamera
+
 # Inherit Omni GSM telephony parts
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
