@@ -30,5 +30,4 @@ PRODUCT_MODEL := Xperia X
 TARGET_OTA_ASSERT_DEVICE := F5121,suzu
 
 # Inherit OmniROM parts
-$(call inherit-product, device/sony/suzu/twrp.mk)
 $(call inherit-product, vendor/omni/config/gsm.mk)
