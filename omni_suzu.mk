@@ -29,5 +29,20 @@ PRODUCT_MODEL := Xperia X
 # Assert
 TARGET_OTA_ASSERT_DEVICE := F5121,suzu
 
+# Vendor properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.semc.version.sw=1300-4911 \
+    ro.semc.version.sw_revision=34.2.A.0.311 \
+    ro.semc.version.sw_variant=GLOBAL-LTE2A \
+    ro.semc.version.sw_type=user \
+    ro.semc.version.fs_revision=34.2.A.0.311 \
+    ro.semc.ms_type_id=PM-0930-BV \
+    ro.semc.version.fs=GENERIC \
+    ro.semc.product.name=XperiaX \
+    ro.semc.product.device=F51 \
+    ro.semc.product.model=F5121 \
+    ro.semc.version.cust=OmniROM \
+    ro.semc.version.cust_revision=android-7.1
+
 # Inherit OmniROM parts
 $(call inherit-product, vendor/omni/config/gsm.mk)
