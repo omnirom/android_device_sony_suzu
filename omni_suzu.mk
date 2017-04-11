@@ -16,18 +16,26 @@
 TARGET_BOOTANIMATION_SIZE := 1080x608
 
 # Inherit device parts
-$(call inherit-product, device/sony/suzu/aosp_f5121.mk)
+$(call inherit-product, device/sony/suzu/device.mk)
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit Omni GSM telephony parts
-PRODUCT_PROPERTY_OVERRIDES += \
-    telephony.lteOnGSMDevice=1
+# kernel
+TARGET_KERNEL_CONFIG := aosp_loire_suzu_defconfig
 
 # Override Product Name for OmniROM
+PRODUCT_DEVICE := suzu
 PRODUCT_NAME := omni_suzu
 PRODUCT_MODEL := Xperia X
+PRODUCT_BRAND := Sony
+PRODUCT_MANUFACTURER := Sony
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := F5121,suzu
+TARGET_OTA_ASSERT_DEVICE := F5121,F5122,suzu
+
+# Suzu Props
+TARGET_SYSTEM_PROP += device/sony/suzu/system.prop
 
 # Inherit OmniROM parts
 $(call inherit-product, vendor/omni/config/gsm.mk)

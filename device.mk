@@ -64,11 +64,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.suzu
 
-# Fingerprint HAL
-PRODUCT_PACKAGES += \
-    fingerprintd \
-    fingerprint.suzu
-
 # NFC config
 PRODUCT_PACKAGES += \
     nfc_nci.suzu
@@ -88,7 +83,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/loire-common/platform_omni.mk)
-$(call inherit-product, vendor/sony/loire-suzu/suzu-vendor.mk)
+$(call inherit-product, vendor/sony/loire-suzu-caf/suzu-vendor.mk)
 
 # copy wlan firmware
 $(call inherit-product-if-exists, vendor/sony/aosp_broadcom/wlan/bcmdhd/firmware/bcm4345/device-bcm.mk)
