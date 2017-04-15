@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# vendor
+VENDOR_PATH := vendor/sony/loire-suzu/proprietary
+
 # Bootanimation
 TARGET_BOOTANIMATION_SIZE := 1080x608
 
@@ -43,6 +46,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.semc.product.model=F5121 \
     ro.semc.version.cust=OmniROM \
     ro.semc.version.cust_revision=android-7.1
+
+# TWRP
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/bin/qseecomd:recovery/root/sbin/qseecomd
 
 # Inherit OmniROM parts
 $(call inherit-product, vendor/omni/config/gsm.mk)
