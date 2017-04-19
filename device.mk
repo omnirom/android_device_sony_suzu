@@ -19,14 +19,20 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
 PRODUCT_COPY_FILES := \
-    $(DEVICE_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    $(DEVICE_PATH)/rootdir/system/vendor/etc/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
+    $(DEVICE_PATH)/rootdir/system/etc/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/default_volume_tables.xml:system/etc/default_volume_tables.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
     $(DEVICE_PATH)/rootdir/system/etc/BCM43455.hcd:system/etc/firmware/BCM43xx.hcd \
     $(DEVICE_PATH)/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
     $(DEVICE_PATH)/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
     $(DEVICE_PATH)/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
     $(DEVICE_PATH)/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(DEVICE_PATH)/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml
 
 # Camera Configuration
 PRODUCT_COPY_FILES += \
