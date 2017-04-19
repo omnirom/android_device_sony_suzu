@@ -19,14 +19,47 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
 PRODUCT_COPY_FILES := \
-    $(DEVICE_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(DEVICE_PATH)/rootdir/system/etc/BCM43455.hcd:system/etc/firmware/BCM43xx.hcd \
     $(DEVICE_PATH)/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
     $(DEVICE_PATH)/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
     $(DEVICE_PATH)/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
     $(DEVICE_PATH)/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    $(DEVICE_PATH)/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(DEVICE_PATH)/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
+
+# Audio
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/system/etc/audio_policy_configuration.xml:/system/etc/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/rootdir/system/vendor/etc/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_qrd_skum.xml:system/etc/mixer_paths_qrd_skum.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_qrd_skun_cajon.xml:system/etc/mixer_paths_qrd_skun_cajon.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_msm8952_polaris.xml:system/etc/mixer_paths_msm8952_polaris.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_wcd9326.xml:system/etc/mixer_paths_wcd9326.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/sound_trigger_mixer_paths_wcd9335.xml:system/etc/sound_trigger_mixer_paths_wcd9335.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    $(DEVICE_PATH)/rootdir/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
+
+PRODUCT_COPY_FILES += \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/system/etc/a2dp_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/system/etc/audio_policy_volumes.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/system/etc/default_volume_tables.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
 
 # Camera Configuration
 PRODUCT_COPY_FILES += \
