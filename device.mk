@@ -15,6 +15,13 @@
 # Device path
 DEVICE_PATH := device/sony/suzu
 
+# Inherit from those products. Most specific first.
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+TARGET_KERNEL_CONFIG := aosp_loire_suzu_defconfig
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
@@ -56,11 +63,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.suzu
 
-# Fingerprint HAL
-PRODUCT_PACKAGES += \
-    fingerprintd \
-    fingerprint.suzu
-
 # NFC config
 PRODUCT_PACKAGES += \
     nfc_nci.suzu
@@ -79,8 +81,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.usb.pid_suffix=1E0
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/loire-common/platform_omni.mk)
-$(call inherit-product, vendor/sony/loire-suzu/suzu-vendor.mk)
+$(call inherit-product, device/sony/loire-common/platform.mk)
+$(call inherit-product, vendor/sony/loire-suzu-caf/suzu-vendor.mk)
 
 # copy wlan firmware
 $(call inherit-product-if-exists, vendor/sony/aosp_broadcom/wlan/bcmdhd/firmware/bcm4345/device-bcm.mk)
