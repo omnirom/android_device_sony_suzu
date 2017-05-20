@@ -64,6 +64,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.suzu
 
+# Fingerprint HAL
+PRODUCT_PACKAGES += \
+    fingerprintd \
+    fingerprint.suzu
+
 # NFC config
 PRODUCT_PACKAGES += \
     nfc_nci.suzu
