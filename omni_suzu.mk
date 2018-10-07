@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Bootanimation
-TARGET_BOOTANIMATION_SIZE := 1080p
+TARGET_BOOTANIMATION_SIZE := 840p
 
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
